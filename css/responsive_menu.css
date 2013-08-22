@@ -1,0 +1,153 @@
+body,html, *{
+    padding: 0;
+    margin: 0;
+  }
+  .container{
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  /* menu css */
+
+  .menu{
+    width: 100%;
+    margin-top: 30px;
+  }
+  .menu li{
+    float: left;
+    list-style: none;
+    width: 20%;
+    position: relative;
+  }
+  .menu a{
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    padding: 20px 0;
+    background: #000;
+    text-align: center;
+  }
+  .menu a:after{
+    display: block;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 10px;
+    height: 36px;
+    width: 0;
+    border-right: 1px solid #4f4f4f;
+  }
+  .menu > li:last-child > a:after,.menu > li > a:hover:after{
+    display: none;
+  }
+  .menu a:hover{
+    background: #ccc;
+    color: #000;
+  } 
+  .switcher{
+    width: 50px;
+    height: 50px;
+    background: #303030;
+    position: relative;
+    display: none;
+    text-align: center;
+  }
+  .switcher:hover{
+    cursor: pointer;
+  }  
+  .menu ul li{
+    float: none;
+    width: 100%;
+  } 
+  .menu ul li a{
+     background: #363636;
+  }
+  .menu ul li a:after{
+    border-right: none;
+    border-bottom: 1px solid #4f4f4f;
+    right: 10px;
+    width: auto;
+    left: 10px;
+    bottom: 0;
+    top: auto;
+  }
+  .menu ul li:hover > a:after{
+    display: none;
+  }
+  .submenu{
+    max-height: 0px;
+    overflow: hidden;
+  }
+  .js-animate .submenu{
+      max-height: 1000px;
+      min-height: 0;
+    }
+  .large-screen li:hover .submenu{
+    max-height: 1000px;
+  }
+  .animate-transition{   
+      -webkit-transition: all ease .4s;
+      -moz-transition: all ease .4s;
+      -ms-transition: all ease .4s;
+      -o-transition: all ease .4s;
+      transition: all ease .4s; 
+    }
+  .menu li:hover .animate-transition{
+      -webkit-transition: all ease 1s;
+      -moz-transition: all ease 1s;
+      -ms-transition: all ease 1s;
+      -o-transition: all ease 1s;
+      transition: all ease 1s; 
+  }
+  
+  
+
+  @media screen and (max-width: 700px){
+
+    .animate-transition, .menu li:hover .animate-transition{
+      -webkit-transition: none;
+      -moz-transition: none;
+      -ms-transition: none;
+      -o-transition: none;
+      transition: none;
+    }
+    
+    .menu{
+      max-height: 0;
+      overflow: hidden;
+    }
+
+    .menu li{
+      float: none;
+      width: 100%;
+    } 
+    .menu a:after{
+      border-right: none;
+      border-bottom: 1px solid #4f4f4f;
+      right: 10px;
+      width: auto;
+      left: 10px;
+      bottom: 0;
+      top: auto;
+    }
+    .switcher{
+      display: block;
+      color: #fff;
+      font-size: 40px;
+      line-height: 50px;
+    }
+    .submenu{
+      max-height: 1000px;
+      display: none;
+    }
+
+    .menu ul{
+      position: static;
+    } 
+    .show{
+      max-height: 1000px;
+    }
+    .show .submenu{ 
+     
+    }
+  }
